@@ -72,7 +72,7 @@ function exportToCSV{       # export txt file to CSV for better and easier view
 
         Get-Content .\mapped_disks.txt >> .\mapped_disks.csv                        # make CSV from TXT
         $csv = Import-Csv ".\mapped_disks.csv"                                      # read data from CSV
-        $xlsxPath = "D:\Programowanie\Projects\Mapped_Disks\mapped_disks.xlsx"
+        $xlsxPath = ".\mapped_disks.xlsx"
         $csv | Export-Excel -Path $xlsxPath -AutoSize                               # export CSV to XLSX
         
         Remove-Item ".\mapped_disks.txt"
@@ -92,7 +92,7 @@ function exportToCSV{       # export txt file to CSV for better and easier view
     }
 }
 
-$data = Get-Content "D:\Programowanie\Projects\Mapped_Disks\users.txt" -Encoding utf8   # load txt file with all domain users
+$data = Get-Content ".\users.txt" -Encoding utf8   # load txt file with all domain users
 TempDir                                                                                 # create temp dir to store txt files
 
 foreach ($line in $data) {
